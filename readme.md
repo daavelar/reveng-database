@@ -1,4 +1,7 @@
 # RevengeDb
+
+With this package you will be able to run the following commands:
+
 - `revengedb` #run all of revenge commands
 - `revengedb:migrations`
 - `revengedb:seeds`
