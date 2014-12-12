@@ -1,0 +1,25 @@
+{
+  "name": "daavelar/revenge-db",
+  "description": "",
+  "authors": [
+    {
+      "name": "Diego Armando Avelar",
+      "email": "davelar@webeleven.com.br"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": "4.2.*",
+    "way/generators": "~1.0",
+    "barryvdh/laravel-migration-generator": "dev-master"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "2.0.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Daavelar\\RevengeDb": "src/"
+    }
+  },
+  "minimum-stability": "stable"
+}
