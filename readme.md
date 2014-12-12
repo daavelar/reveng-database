@@ -1,4 +1,4 @@
-# Reven
+# RevengeDb
 - `revengedb` #run all of revenge commands
 - `revengedb:migrations`
 - `revengedb:seeds`
