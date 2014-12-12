@@ -15,8 +15,10 @@ Run:
  
     composer update --dev
 
-Put the ServiceProvider Call in the app.php
+Put the ServiceProviders in the app.php
 
+    'Way\Generators\GeneratorsServiceProvider',
+    'Barryvdh\MigrationGenerator\MigrationGeneratorServiceProvider',
     'Daavelar\RevengeDb\RevengeDbServiceProvider'
     
 Adjust your database config in database.php
