@@ -10,9 +10,7 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "way/generators": "2.*"
-  },
-  "require-dev": {
+    "way/generators": "2.*",
     "xethron/migrations-generator": "dev-master"
   },
   "autoload": {
