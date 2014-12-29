@@ -9,7 +9,7 @@ With this package you will be able to run the following commands:
 
 Add this to your composer require-dev section:
 
-    "daavelar/revengedb": "~1.0"
+    "daavelar/revenge-db": "~1.0"
     
 Run:   
  
