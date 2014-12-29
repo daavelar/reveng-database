@@ -1,7 +1,9 @@
 {
   "name": "daavelar/revenge-db",
   "require": {
-    "php": ">=5.4.0"
+    "php": ">=5.4.0",
+    "illuminate/support": "4.2.*",
+    "way/generators": "2.*"
   },
   "autoload": {
     "psr-0": {
@@ -26,8 +28,9 @@
   ],
   "minimum-stability": "dev",
   "require-dev": {
-    "way/generators": "2.*",
-    "xethron/migrations-generator": "dev-master"
+    "phpspec/phpspec": "2.0.*",
+    "codeception/codeception": "~2.0",
+    "illuminate/console": "~4.2"
   },
   "description": "RevengeDb provides artisan commands to make a reverse engineer of the database, generating automatically the migrations, seeder and models"
 }

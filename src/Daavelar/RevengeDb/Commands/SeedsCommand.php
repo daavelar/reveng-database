@@ -38,7 +38,7 @@ class SeedsCommand extends DatabaseCommand {
     {
         foreach($this->tables() as $table) {
             if(is_null($this->option('filename'))) {
-                $filename = $this->toCamelCase($table);
+                $filename = $this->camelize($table);
             }
             else {
                 $filename = $this->option('filename');

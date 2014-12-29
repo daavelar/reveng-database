@@ -27,10 +27,6 @@ class RevengeDbServiceProvider extends ServiceProvider {
 			return new MigrationsCommand();
 		}); $this->commands('revengedb.migrations');
 
-		$this->app['revengedb.migrations'] = $this->app->share(function ($app) {
-			return new MigrationsCommand();
-		}); $this->commands('revengedb.migrations');
-
 		$this->app['revengedb.models'] = $this->app->share(function ($app) {
 			return new ModelsCommand();
 		}); $this->commands('revengedb.models');

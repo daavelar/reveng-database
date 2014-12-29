@@ -36,7 +36,7 @@ class ModelsCommand extends DatabaseCommand {
     public function fire()
     {
         foreach($this->tables() as $table) {
-            $this->call('generate:model', ['modelName' => $this->toCamelCase($table)]);
+            $this->call('generate:model', ['modelName' => $this->camelize($table)]);
         }
     }
 

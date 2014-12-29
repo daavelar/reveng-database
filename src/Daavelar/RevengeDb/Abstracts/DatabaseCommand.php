@@ -68,18 +68,14 @@ abstract class DatabaseCommand extends Command {
         ];
     }
 
-    function toCamelCase($string)
+    /**
+     * @param $table
+     * @return string
+     */
+    protected function camelize($table)
     {
-        $pieces = explode('_', $string);
-
-        $camelCasedWord = '';
-
-        foreach($pieces as $piece) {
-            $camelCasedWord .= ucfirst($piece);
-        }
-
-        return $camelCasedWord;
+        return ucwords(Str::camel($table));
     }
 
 
-} 
+}

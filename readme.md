@@ -3,7 +3,7 @@
 With this package you will be able to run the following commands:
 
 - `revengedb` #run all of revenge commands
-- `revengedb:migrations`
+<!-- -`revengedb:migrations` -->
 - `revengedb:seeds`
 - `revengedb:models`
 
@@ -18,7 +18,7 @@ Run:
 Put the ServiceProviders in the app.php
 
     'Way\Generators\GeneratorsServiceProvider',
-    'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
+<!-- 'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider', -->
     'Daavelar\RevengeDb\RevengeDbServiceProvider'
     
 Adjust your database config in database.php
@@ -40,9 +40,9 @@ Adjust your database config in database.php
         
 ##Executing actions: 
 
-Generating a migration file for all tables of the database
+<!-- Generating a migration file for all tables of the database -->
     
-    php artisan revengedb:migrations
+<!-- php artisan revengedb:migrations -->
     
 Generating a seed file for all tables of the database
     
@@ -54,13 +54,13 @@ Generating a model for all tables of the database
     
 If you want just execute the action in one or more tables, you can pass only as a parameter
     
-    php artisan revengedb:migrations --only=table1,table2,table3
+<!-- php artisan revengedb:migrations --only=table1,table2,table3 -->
     php artisan revengedb:seeds --only=table1,table2,table3
     php artisan revengedb:models --only=table1,table2,table3    
     
 If you want just exclude one or more tables, you can pass the except parameter
     
-    php artisan revengedb:migrations --except=table1,table2,table3
+<!-- php artisan revengedb:migrations --except=table1,table2,table3 -->
     php artisan revengedb:seeds --except=table1,table2,table3
     php artisan revengedb:models--except=table1,table2,table3
     
