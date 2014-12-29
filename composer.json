@@ -11,7 +11,7 @@
   "require": {
     "php": ">=5.4.0",
     "way/generators": "2.*",
-    "xethron/migrations-generator": "dev-master"
+    "xethron/migrations-generator": "1.2@dev"
   },
   "autoload": {
     "psr-0": {
