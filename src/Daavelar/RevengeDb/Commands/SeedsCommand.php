@@ -43,7 +43,7 @@ class SeedsCommand extends DatabaseCommand {
             else {
                 $filename = $this->option('filename');
             }
-            $this->call("generate:seed", ['name' => $filename]);
+            $this->call("generate:seed", ['tableName' => $filename]);
         }
     }
 

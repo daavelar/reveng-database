@@ -1,6 +1,6 @@
 {
   "name": "daavelar/revenge-db",
-  "description": "",
+  "description": "RevengeDb provides artisan commands to make a reverse engineer of the database, generating automatically the migrations, seeder and models",
   "keywords": ["laravel", "migration", "generator", "migrations", "artisan", "models", "reverse engineer", "from existent db"],
   "authors": [
     {
@@ -10,9 +10,10 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "illuminate/support": "~4.2",
-    "way/generators": "2.*",
-    "xethron/migrations-generator": "~1.2"
+    "way/generators": "2.*"
+  },
+  "require-dev": {
+    "xethron/migrations-generator": "dev-master"
   },
   "autoload": {
     "psr-0": {

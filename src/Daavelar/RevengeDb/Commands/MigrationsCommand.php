@@ -37,6 +37,7 @@ class MigrationsCommand extends DatabaseCommand {
     public function fire()
     {
         $tables = implode(',', $this->tables());
+        print_r($tables);exit;
         $this->call("migrate:generate", ['tables' => $tables]);
     }
 
