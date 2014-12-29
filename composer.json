@@ -1,6 +1,7 @@
 {
   "name": "daavelar/revenge-db",
   "description": "",
+  "keywords": ["laravel", "migration", "generator", "migrations", "artisan", "models", "reverse engineer", "from existent db"],
   "authors": [
     {
       "name": "Diego Armando Avelar",
@@ -8,8 +9,10 @@
     }
   ],
   "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": "~4.2",
     "way/generators": "2.*",
-    "xethron/migrations-generator": "dev-master"
+    "Xethron/migrations-generator": "dev-master"
   },
   "autoload": {
     "psr-0": {
