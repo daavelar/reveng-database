@@ -74,7 +74,7 @@ abstract class DatabaseCommand extends Command {
      */
     protected function camelize($table)
     {
-        return ucwords(Str::camel($table));
+        return ucwords($this->laravel->str->camel($table));
     }
 
 
