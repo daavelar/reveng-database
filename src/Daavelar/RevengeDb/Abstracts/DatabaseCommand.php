@@ -68,14 +68,15 @@ abstract class DatabaseCommand extends Command {
         ];
     }
 
-    /**
-     * @param $table
-     * @return string
-     */
-    protected function camelize($table)
-    {
-        return ucwords($this->laravel->str->camel($table));
-    }
 
+    function toCamelCase($string)
+    {
+        $pieces = explode('_', $string);
+        $camelCasedWord = '';
+        foreach($pieces as $piece) {
+            $camelCasedWord .= ucfirst($piece);
+        }
+        return $camelCasedWord;
+    }
 
 }
