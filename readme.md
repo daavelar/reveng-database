@@ -18,7 +18,7 @@ Run:
 Put the ServiceProviders in the app.php
 
     'Way\Generators\GeneratorsServiceProvider',
-    'Barryvdh\MigrationGenerator\MigrationGeneratorServiceProvider',
+    'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
     'Daavelar\RevengeDb\RevengeDbServiceProvider'
     
 Adjust your database config in database.php
