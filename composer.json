@@ -13,9 +13,6 @@
     "way/generators": "~1.0",
     "barryvdh/laravel-migration-generator": "dev-master"
   },
-  "require-dev": {
-    "phpspec/phpspec": "2.0.*"
-  },
   "autoload": {
     "psr-0": {
       "Daavelar\\RevengeDb": "src/"
