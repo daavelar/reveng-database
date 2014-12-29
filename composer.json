@@ -9,12 +9,10 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0"
-  },
-  "dependencies" : {
+    "php": ">=5.4.0",
     "way/generators": "2.*",
     "xethron/migrations-generator": "~1.2"
-  }
+  },
   "autoload": {
     "psr-0": {
       "Daavelar\\RevengeDb": "src/"
