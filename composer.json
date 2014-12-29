@@ -2,7 +2,8 @@
   "name": "daavelar/revenge-db",
   "require": {
     "way/generators": "2.*",
-    "php": ">=5.4.0"
+    "php": ">=5.4.0",
+    "xethron/migrations-generator": "dev-master"
   },
   "autoload": {
     "psr-0": {
@@ -26,8 +27,5 @@
     "from existent db"
   ],
   "minimum-stability": "dev",
-  "require-dev": {
-    "xethron/migrations-generator": "dev-master"
-  },
   "description": "RevengeDb provides artisan commands to make a reverse engineer of the database, generating automatically the migrations, seeder and models"
 }
