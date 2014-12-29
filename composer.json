@@ -1,22 +1,33 @@
 {
   "name": "daavelar/revenge-db",
-  "description": "RevengeDb provides artisan commands to make a reverse engineer of the database, generating automatically the migrations, seeder and models",
-  "keywords": ["laravel", "migration", "generator", "migrations", "artisan", "models", "reverse engineer", "from existent db"],
-  "authors": [
-    {
-      "name": "Diego Armando Avelar",
-      "email": "davelar@webeleven.com.br"
-    }
-  ],
   "require": {
-    "php": ">=5.4.0",
     "way/generators": "2.*",
-    "xethron/migrations-generator": "dev-master"
+    "php": ">=5.4.0"
   },
   "autoload": {
     "psr-0": {
       "Daavelar\\RevengeDb": "src/"
     }
   },
-  "minimum-stability": "dev"
+  "authors": [
+    {
+      "name": "Diego Armando Avelar",
+      "email": "davelar@webeleven.com.br"
+    }
+  ],
+  "keywords": [
+    "laravel",
+    "migration",
+    "generator",
+    "migrations",
+    "artisan",
+    "models",
+    "reverse engineer",
+    "from existent db"
+  ],
+  "minimum-stability": "dev",
+  "require-dev": {
+    "xethron/migrations-generator": "dev-master"
+  },
+  "description": "RevengeDb provides artisan commands to make a reverse engineer of the database, generating automatically the migrations, seeder and models"
 }
