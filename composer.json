@@ -6,8 +6,8 @@
     "way/generators": "2.*"
   },
   "autoload": {
-    "psr-0": {
-      "Daavelar\\RevengeDb": "src/"
+    "psr-4": {
+      "Daavelar\RevengeDb": "src/"
     }
   },
   "authors": [
@@ -27,10 +27,6 @@
     "from existent db"
   ],
   "minimum-stability": "dev",
-  "require-dev": {
-    "phpspec/phpspec": "2.0.*",
-    "codeception/codeception": "~2.0",
-    "illuminate/console": "~4.2"
-  },
+ 
   "description": "RevengeDb provides artisan commands to make a reverse engineer of the database, generating automatically the migrations, seeder and models"
 }
