@@ -1,13 +1,8 @@
 <?php namespace Daavelar\RevengeDb;
 
-use Barryvdh\MigrationGenerator\MigrationGeneratorServiceProvider;
-use Daavelar\RevengeDb\Commands\MigrationsCommand;
-use Daavelar\RevengeDb\Commands\ModelsCommand;
-use Daavelar\RevengeDb\Commands\RevengeDbCommand;
-use Daavelar\RevengeDb\Commands\SeedsCommand;
 use Illuminate\Support\ServiceProvider;
 
-class RevengeDbServiceProvider extends ServiceProvider {
+class RevengeDb extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
