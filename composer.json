@@ -26,7 +26,5 @@
     "reverse engineer",
     "from existent db"
   ],
-  "minimum-stability": "dev",
- 
   "description": "RevengeDb provides artisan commands to make a reverse engineer of the database, generating automatically the migrations, seeder and models"
 }
