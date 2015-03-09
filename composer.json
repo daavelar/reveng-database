@@ -1,15 +1,5 @@
 {
-  "name": "daavelar/revenge-db",
-  "require": {
-    "php": ">=5.4.0",
-    "illuminate/support": ">=4.2.*",
-    "way/generators": "2.*"
-  },
-  "autoload": {
-    "psr-4": {
-      "Daavelar\\RevengeDb": "src/"
-    }
-  },
+  "name": "daavelar/revengedb",
   "authors": [
     {
       "name": "Diego Armando Avelar",
@@ -26,6 +16,5 @@
     "reverse engineer",
     "from existent db"
   ],
-  "minimum-stability": "dev-master",
   "description": "RevengeDb provides artisan commands to make a reverse engineer of the database, generating automatically the migrations, seeder and models"
 }
