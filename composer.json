@@ -1,6 +1,8 @@
 {
   "name": "daavelar/revengedb",
   "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": "~5.0",
     "mustache/mustache": "~2.5"
   },
   "authors": [
@@ -9,6 +11,11 @@
       "email": "davelar@webeleven.com.br"
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "Daavelar\\RevengeDb": "src/"
+    }
+  },
   "keywords": [
     "laravel",
     "migration",

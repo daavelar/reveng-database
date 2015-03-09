@@ -67,16 +67,4 @@ abstract class DatabaseCommand extends Command {
             ['filename', null, InputOption::VALUE_OPTIONAL, 'The name of the file.', null],
         ];
     }
-
-
-    function toCamelCase($string)
-    {
-        $pieces = explode('_', $string);
-        $camelCasedWord = '';
-        foreach($pieces as $piece) {
-            $camelCasedWord .= ucfirst($piece);
-        }
-        return $camelCasedWord;
-    }
-
 }

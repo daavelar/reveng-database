@@ -1,27 +1,28 @@
 <?php namespace Daavelar\RevengeDb\Commands;
 
 use Daavelar\RevengeDb\Abstracts\DatabaseCommand;
+use Symfony\Component\Console\Input\InputArgument;
 
-class ModelsCommand extends DatabaseCommand {
+class MigrationsCommand extends DatabaseCommand {
 
     /**
      * The console command name.
      *
      * @var string
      */
-    protected $name = 'revengedb:models';
+    protected $name = 'revengedb:migrations';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create the models based on the db schema.';
+    protected $description = 'Generates a migration file from the tables of the database.';
 
     /**
      * Create a new command instance.
      *
-     * @return void
+     * @return \MigrationFromDb
      */
     public function __construct()
     {
@@ -35,9 +36,9 @@ class ModelsCommand extends DatabaseCommand {
      */
     public function fire()
     {
-        foreach($this->tables() as $table) {
-            $this->call('generate:model', ['modelName' => $this->camelize($table)]);
-        }
+        $tables = implode(',', $this->tables());
+
+        $this->info('migration');
     }
 
     /**
@@ -48,7 +49,9 @@ class ModelsCommand extends DatabaseCommand {
     protected function getArguments()
     {
         return [
+
         ];
     }
+
 
 }
