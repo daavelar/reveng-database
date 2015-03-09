@@ -1,47 +1,30 @@
-# RevengeDb
+# Laravel5 Package :: RevengeDb
 
 With this package you will be able to run the following commands:
 
-- `revengedb`  #run all of revenge commands
+- `revengedb:migrations`
 - `revengedb:seeds`
 - `revengedb:models`
 
-Add this to your composer require-dev section:
+You have the option to run all commands above in one line
 
-    "daavelar/revenge-db": "1.4.0"
-    
-Run:   
- 
-    composer update --dev
+- `revengedb`
 
-Put the ServiceProviders in the app.php
+# Instructions
 
-    'Way\Generators\GeneratorsServiceProvider',
-<!-- 'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider', -->
+Add the package to your Laravel project:
+
+    composer require daavelar/revengedb --dev
+
+Add the ServiceProvider
+
     'Daavelar\RevengeDb\RevengeDbServiceProvider'
     
-Adjust your database config in database.php
+# Features: 
 
-    return [
-        'connections' => [
-             'mysql' => [
-                'driver'    => 'some data here',
-                'host'      => 'some data here',
-                'database'  => 'some data here',
-                'username'  => 'some data here',
-                'password'  => 'some data here',
-                'charset'   => 'some data here',
-                'collation' => 'some data here',
-                'prefix'    => 'some data here'
-            ],
-        ]
-    ];
-        
-##Executing actions: 
-
-<!-- Generating a migration file for all tables of the database -->
+Generating a migration file for all tables of the database
     
-<!-- php artisan revengedb:migrations -->
+php artisan revengedb:migrations
     
 Generating a seed file for all tables of the database
     
@@ -53,13 +36,13 @@ Generating a model for all tables of the database
     
 If you want just execute the action in one or more tables, you can pass only as a parameter
     
-<!-- php artisan revengedb:migrations --only=table1,table2,table3 -->
+    php artisan revengedb:migrations --only=table1,table2,table3
     php artisan revengedb:seeds --only=table1,table2,table3
     php artisan revengedb:models --only=table1,table2,table3    
     
 If you want just exclude one or more tables, you can pass the except parameter
     
-<!-- php artisan revengedb:migrations --except=table1,table2,table3 -->
+    php artisan revengedb:migrations --except=table1,table2,table3
     php artisan revengedb:seeds --except=table1,table2,table3
     php artisan revengedb:models--except=table1,table2,table3
     
