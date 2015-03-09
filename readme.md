@@ -1,16 +1,17 @@
 # Laravel5 Package :: RevengeDb
 
-With this package you will be able to run the following commands:
+With this package you will be able to transform your existent mysql schema in migration files of Laravel
+with the following commands:
 
-- `revengedb:migrations`
-- `revengedb:seeds`
-- `revengedb:models`
+- `php artisan revengedb:migrations`
+- `php artisan revengedb:seeds`
+- `php artisan revengedb:models`
 
-You have the option to run all commands above in one line
+You have the option to run all commands above in one line:
 
-- `revengedb`
+- `php artisan revengedb`
 
-# Instructions
+# Installation
 
 Add the package to your Laravel project:
 
@@ -20,11 +21,11 @@ Add the ServiceProvider
 
     'Daavelar\RevengeDb\RevengeDbServiceProvider'
     
-# Features: 
+# Using: 
 
 Generating a migration file for all tables of the database
     
-php artisan revengedb:migrations
+    php artisan revengedb:migrations
     
 Generating a seed file for all tables of the database
     
