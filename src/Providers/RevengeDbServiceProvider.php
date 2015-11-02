@@ -1,9 +1,20 @@
 <?php namespace Daavelar\RevengeDb\Providers;
 
-use Daavelar\RevengeDb\Commands\Migrations;
+use Daavelar\RevengeDb\Commands\MigrationsCommand;
+use Daavelar\RevengeDb\Commands\ModelsCommand;
+use Daavelar\RevengeDb\Commands\RevengeDbCommand;
+use Daavelar\RevengeDb\Commands\SeedsCommand;
 use Illuminate\Support\ServiceProvider;
 
-class RevengeDbServiceProvider extends ServiceProvider {
+class RevengeDbServiceProvider extends ServiceProvider
+{
+
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
 
     /**
      * Register the service provider.
@@ -13,7 +24,25 @@ class RevengeDbServiceProvider extends ServiceProvider {
     public function register()
     {
         $this->app['revengedb.migrations'] = $this->app->share(function ($app) {
-            return new Migrations;
-        }); $this->commands('revengedb.migrations');
+            return new MigrationsCommand();
+        });
+        $this->commands('revengedb.migrations');
+
+        $this->app['revengedb.models'] = $this->app->share(function ($app) {
+            return new ModelsCommand();
+        });
+        $this->commands('revengedb.models');
+
+        $this->app['revengedb.seeds'] = $this->app->share(function ($app) {
+            return new SeedsCommand;
+        });
+        $this->commands('revengedb.seeds');
+
+        $this->app['revengedb'] = $this->app->share(function ($app) {
+            return new RevengeDbCommand();
+        });
+        $this->commands('revengedb');
     }
+
+
 }

@@ -36,9 +36,7 @@ class MigrationsCommand extends DatabaseCommand {
      */
     public function fire()
     {
-        $tables = implode(',', $this->tables());
-
-        $this->info('migration');
+       dd($this->tables());
     }
 
     /**

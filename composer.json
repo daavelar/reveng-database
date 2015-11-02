@@ -1,14 +1,15 @@
 {
   "name": "daavelar/revengedb",
   "require": {
-    "php": ">=5.4.0",
-    "illuminate/support": "~5.0",
-    "mustache/mustache": "~2.5"
+    "php": ">=5.5.0",
+    "illuminate/support": "~5.1",
+    "laracasts/generators": "~1.1.2",
+    "doctrine/dbal": "~2.5.1"
   },
   "authors": [
     {
       "name": "Diego Armando Avelar",
-      "email": "davelar@webeleven.com.br"
+      "email": "diegoarmando2011@gmail.com"
     }
   ],
   "autoload": {
