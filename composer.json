@@ -27,5 +27,5 @@
     "reverse engineer",
     "from existent db"
   ],
-  "description": "RevengeDb provides artisan commands to make a reverse engineer of the database, generating automatically the migrations, seeder and models"
+  "description": "RevengeDb provides an artisan command to make a reverse engineer of the database, generating automatically the migrations for you"
 }
