@@ -28,4 +28,7 @@ If you want just execute the action in one or more tables, you can pass only as 
 If you want just exclude one or more tables, you can pass the except parameter
     
     php artisan revengedb:migrations --except=table1,table2,table3
+    
+Important: 
+All migration files will be generated with the $table->timestamps() line.
 
