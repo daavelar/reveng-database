@@ -1,4 +1,4 @@
-# Laravel5 Package :: RevengeDb
+# Laravel 5.1 Package :: RevengeDb
 
 With this package you will be able to transform your existent mysql schema in migration files of Laravel
 with the following commands:
@@ -17,9 +17,9 @@ Add the package to your Laravel project:
 
     composer require daavelar/revengedb --dev
 
-Add the ServiceProvider
+Add the ServiceProvider to the app.php file
 
-    'Daavelar\RevengeDb\RevengeDbServiceProvider'
+    Daavelar\RevengeDb\RevengeDbServiceProvider::class
     
 # Using: 
 
