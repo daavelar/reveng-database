@@ -1,10 +1,11 @@
 <?php namespace Daavelar\RevengeDb\Providers;
 
-use Daavelar\RevengeDb\Commands\MigrationsCommand;
-use Daavelar\RevengeDb\Commands\ModelsCommand;
-use Daavelar\RevengeDb\Commands\RevengeDbCommand;
-use Daavelar\RevengeDb\Commands\SeedsCommand;
+use Daavelar\RevengeDb\Console\MigrationsCommand;
+use Daavelar\RevengeDb\Console\ModelsCommand;
+use Daavelar\RevengeDb\Console\RevengeDbCommand;
+use Daavelar\RevengeDb\Console\SeedsCommand;
 use Illuminate\Support\ServiceProvider;
+use Laracasts\Generators\GeneratorsServiceProvider;
 
 class RevengeDbServiceProvider extends ServiceProvider
 {
@@ -24,12 +25,12 @@ class RevengeDbServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app['revengedb.migrations'] = $this->app->share(function ($app) {
-            return new MigrationsCommand();
+            return new MigrationsCommand;
         });
         $this->commands('revengedb.migrations');
 
         $this->app['revengedb.models'] = $this->app->share(function ($app) {
-            return new ModelsCommand();
+            return new ModelsCommand;
         });
         $this->commands('revengedb.models');
 
@@ -39,10 +40,13 @@ class RevengeDbServiceProvider extends ServiceProvider
         $this->commands('revengedb.seeds');
 
         $this->app['revengedb'] = $this->app->share(function ($app) {
-            return new RevengeDbCommand();
+            return new RevengeDbCommand;
         });
         $this->commands('revengedb');
     }
 
-
+    public function boot()
+    {
+        $this->app->register(GeneratorsServiceProvider::class);
+    }
 }

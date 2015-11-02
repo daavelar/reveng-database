@@ -1,4 +1,4 @@
-<?php namespace Daavelar\RevengeDb\Commands;
+<?php namespace Daavelar\RevengeDb\Console;
 
 use Daavelar\RevengeDb\Abstracts\DatabaseCommand;
 use Symfony\Component\Console\Input\InputArgument;

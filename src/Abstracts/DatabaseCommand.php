@@ -5,9 +5,30 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\InputOption;
 
-abstract class DatabaseCommand extends Command {
+abstract class DatabaseCommand extends Command
+{
 
     use OnlyAndExceptArguments;
+
+    public function __construct()
+    {
+        $config = new \Doctrine\DBAL\Configuration();
+
+        $connectionParams = [
+            'dbname'   => config('database.connections.mysql.database'),
+            'user'     => config('database.connections.mysql.username'),
+            'password' => config('database.connections.mysql.password'),
+            'host'     => config('database.connections.mysql.host'),
+            'driver'   => 'pdo_mysql',
+        ];
+
+        $conn = \Doctrine\DBAL\DriverManager::getConnection($connectionParams, $config);
+
+        $conn->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'string');
+        $this->schema = $conn->getSchemaManager();
+
+        parent::__construct();
+    }
 
     /**
      * @return mixed
@@ -19,39 +40,31 @@ abstract class DatabaseCommand extends Command {
             exit;
         }
 
-        if($this->passedOnly()) {
-            return $this->commaParse($this->option('only'));
-        }
+        $tables = $this->schema->listTables();
 
-        $dbname = $this->database();
-        $tables = DB::SELECT(DB::raw("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = '$dbname'"));
+        if($this->passedOnly()) {
+            foreach($tables as $table) {
+                if(in_array($table->getName(), $this->commaParse($this->option('only')))) {
+                    $tables_to_return[] = $table;
+                }
+            }
+        }
 
         if($this->passedExcept()) {
             foreach($tables as $table) {
-                if(!in_array($table->TABLE_NAME, $this->commaParse($this->option('except')))) {
-                    $tables_return[] = $table->TABLE_NAME;
+                if(!in_array($table->getName(), $this->commaParse($this->option('only')))) {
+                    $tables_to_return[] = $table;
                 }
             }
-            return $tables_return;
         }
-        else {
+
+        if(!$this->passedExcept() && !$this->passedOnly()) {
             foreach($tables as $table) {
-                $tables_return[] = $table->TABLE_NAME;
+                $tables_to_return[] = $table;
             }
         }
 
-        return $tables_return;
-    }
-
-    /**
-     * @return mixed
-     */
-    protected function database()
-    {
-        $driver = $this->laravel->config->get('database.default');
-        $dbname = $this->laravel->config->get("database.connections.$driver.database");
-
-        return $dbname;
+        return $tables_to_return;
     }
 
     /**

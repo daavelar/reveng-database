@@ -1,9 +1,10 @@
-<?php namespace Daavelar\RevengeDb\Commands;
+<?php namespace Daavelar\RevengeDb\Console;
 
 use Daavelar\RevengeDb\Abstracts\DatabaseCommand;
 use Symfony\Component\Console\Input\InputArgument;
 
-class MigrationsCommand extends DatabaseCommand {
+class MigrationsCommand extends DatabaseCommand
+{
 
     /**
      * The console command name.
@@ -18,6 +19,7 @@ class MigrationsCommand extends DatabaseCommand {
      * @var string
      */
     protected $description = 'Generates a migration file from the tables of the database.';
+    protected $schema;
 
     /**
      * Create a new command instance.
@@ -36,7 +38,41 @@ class MigrationsCommand extends DatabaseCommand {
      */
     public function fire()
     {
-       dd($this->tables());
+        foreach($this->tables() as $table) {
+            $columns = $this->schema->listTableColumns($table->getName());
+
+            $argumentos = "";
+
+            foreach($columns as $column) {
+                if(!in_array($column->getName(), ['created_at', 'updated_at'])) {
+                    $argumentos .= $column->getName() . ':' . $this->doctrineTypeToGenerator($column->getType()) . ',';
+                }
+            }
+
+            $argumentos = rtrim($argumentos, ',');
+
+            $this->callSilent('make:migration:schema', [
+                'name'     => "create_{$table->getName()}_table",
+                '--schema' => $argumentos
+            ]);
+
+            $this->info("Creating migration and model file of table {$table->getName()}");
+        }
+
+    }
+
+    public function doctrineTypeToGenerator($type)
+    {
+        return strtolower($type);
+
+        switch($type) {
+            case 'Integer':
+                return 'integer';
+            case 'String':
+                return 'string';
+            case 'DateTime':
+                return 'datetime';
+        }
     }
 
     /**
