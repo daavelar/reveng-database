@@ -46,6 +46,7 @@ class MigrationsCommand extends DatabaseCommand
             $argumentos = "";
 
             foreach($columns as $column) {
+                if($column->getName() == 'id') continue;
                 if(!in_array($column->getName(), ['created_at', 'updated_at'])) {
                     $argumentos .= $column->getName() . ':' . $this->doctrineTypeToGenerator($column->getType()) . ',';
                 }
