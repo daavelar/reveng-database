@@ -56,7 +56,7 @@ class MigrationsCommand extends DatabaseCommand
                 '--schema' => $argumentos
             ]);
 
-            $this->info("Creating migration and model file of table {$table->getName()}");
+            $this->info("Creating migration file for table {$table->getName()}");
         }
 
     }
