@@ -13,8 +13,8 @@ Add the package to your Laravel project:
 
 Add the ServiceProvider to the app.php file
 
-    Daavelar\RevengeDb\RevengeDbServiceProvider::class
-    
+    Daavelar\RevengeDb\Providers\RevengeDbServiceProvider::class
+
 # Using: 
 
 Generating a migration file for all tables of the database
