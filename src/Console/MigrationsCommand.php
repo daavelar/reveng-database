@@ -57,7 +57,7 @@ class MigrationsCommand extends DatabaseCommand
             $this->callSilent('make:migration:schema', [
                 'name'     => "create_{$table->getName()}_table",
                 '--schema' => $argumentos
-            ]);
+                ]);
 
             $this->info("Creating migration file for table {$table->getName()}");
         }
@@ -70,12 +70,18 @@ class MigrationsCommand extends DatabaseCommand
 
         switch($type) {
             case 'integer':
-                return 'integer';
+              return 'integer';
             case 'string':
             case 'simplearray':
                 return 'string';
+            case 'date':
+                return 'date';
             case 'datetime':
                 return 'datetime';
+            case 'float': 
+                return 'float';
+            case 'text':    
+                return 'text';
         }
     }
 
