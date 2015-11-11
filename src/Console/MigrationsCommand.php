@@ -78,9 +78,12 @@ class MigrationsCommand extends DatabaseCommand
                 return 'date';
             case 'datetime':
                 return 'datetime';
+                case 'time':
+                return 'time';
             case 'float': 
                 return 'float';
             case 'text':    
+            case 'blob':    
                 return 'text';
         }
     }
