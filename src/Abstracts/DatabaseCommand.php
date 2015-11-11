@@ -42,6 +42,8 @@ abstract class DatabaseCommand extends Command
 
         $tables = $this->schema->listTables();
 
+        $tables_to_return = [];
+
         if($this->passedOnly()) {
             foreach($tables as $table) {
                 if(in_array($table->getName(), $this->commaParse($this->option('only')))) {
