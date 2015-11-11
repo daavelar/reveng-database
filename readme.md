@@ -1,6 +1,6 @@
 # Laravel 5.1 Package :: RevengeDb
 
-With this package you will be able to transform your existent schema (only tested with mysql) in migration files of Laravel
+With this package you will be able to transform your existent schema (only support mysql at the moment) in migration files of Laravel
 with the following command:
 
 - `php artisan revengedb:migrations`
@@ -17,7 +17,7 @@ Add the ServiceProvider to the app.php file
 
 # Using: 
 
-Generating a migration file for all tables of the database
+Generating a migration file for all tables of the database of your mysql config
     
     php artisan revengedb:migrations
     
