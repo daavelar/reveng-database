@@ -39,6 +39,8 @@ class MigrationsCommand extends DatabaseCommand
     public function fire()
     {
         foreach($this->tables() as $table) {
+            if($table->getName() == 'migrations') continue;
+            
             $columns = $this->schema->listTableColumns($table->getName());
 
             $argumentos = "";
