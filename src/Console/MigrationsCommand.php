@@ -47,6 +47,7 @@ class MigrationsCommand extends DatabaseCommand
 
             foreach($columns as $column) {
                 if($column->getName() == 'id') continue;
+                
                 if(!in_array($column->getName(), ['created_at', 'updated_at'])) {
                     $argumentos .= $column->getName() . ':' . $this->doctrineTypeToGenerator($column->getType()) . ',';
                 }
@@ -66,15 +67,16 @@ class MigrationsCommand extends DatabaseCommand
 
     public function doctrineTypeToGenerator($type)
     {
-        return strtolower($type);
-
         switch($type) {
             case 'Integer':
                 return 'integer';
             case 'String':
+            case 'SimpleArray':
                 return 'string';
             case 'DateTime':
                 return 'datetime';
+             
+                return 'string';
         }
     }
 
